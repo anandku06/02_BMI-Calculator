@@ -14,6 +14,25 @@ form.addEventListener("submit", (e) => {
     if (height === " " || height < 0 || isNaN(height)) {
         results.innerHTML = "Please give a valid height"
     }
+    else if (weight === " " || weight < 0 || isNaN(weight)) {
+        results.innerHTML = "Please give a valid weight"
+    }
+    else{
+        const BMI = (weight / ((height * height) / 10000)).toFixed(2)
+        let message;
+        if(BMI < 18.6){
+            message = "You are UnderWeight!! Eat More"
+        }
+        else if(BMI < 24.9){
+            message = "You are Normal!! Stay Healthy"
+        }
+        else{
+            message = "You are OverWeight!! Eat Less Now"
+        }
+
+        results.innerHTML = `<span>${BMI}</span><p>${message}</p>`
+    }
 })
 
 // isNaN(): Returns a Boolean value that indicates whether a value is the reserved value NaN (not a number).
+// .toFixed(): Returns a string representing a number in fixed-point notation.
