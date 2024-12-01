@@ -1,24 +1,76 @@
 /* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: grid;
-    place-items: center;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
 .container {
-    background-color: #797978;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
     padding: 30px;
     min-height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
 }
 
-#height, #weight {
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
     width: 100%;
-    max-width: 150px;
-    height: 25px;
-    margin-top: 30px;
+    max-width: 400px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
 }
 
 #weight-guide {
@@ -26,30 +78,14 @@ body {
     text-align: center;
 }
 
-#results {
-    font-size: 35px;
-    margin-top: 20px;
-    color: rgb(241, 241, 241);
-    text-align: center;
+#weight-guide h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-button {
-    height: 35px;
-    margin-top: 25px;
-    background-color: #fff;
-    padding: 1px 30px;
-    border-radius: 8px;
-    color: #212121;
-    text-decoration: none;
-    border: 2px solid #212121;
-    font-size: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-    background-color: #212121;
-    color: #fff;
+#weight-guide p {
+    font-size: 1em;
+    margin: 5px 0;
 }
 
 /* Responsive styles */
@@ -58,29 +94,29 @@ button:hover {
         padding: 20px;
     }
 
-    #height, #weight {
-        width: 100%;
-        max-width: 100%;
+    h1 {
+        font-size: 2em;
     }
 
     button {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-        font-size: 20px;
+        font-size: 1em;
     }
 
     #results {
-        font-size: 30px;
+        font-size: 1.2em;
     }
 }
 
 @media (max-width: 480px) {
-    #results {
-        font-size: 25px;
+    h1 {
+        font-size: 1.5em;
     }
 
     button {
-        font-size: 18px;
+        font-size: 0.9em;
+    }
+
+    #results {
+        font-size: 1em;
     }
 }
